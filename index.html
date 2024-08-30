@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Codex - Solutions</title>
+	<title>Codex</title>
 
 	<meta name="keywords" content="WebSite Template" />
 	<meta name="description" content="Codex - Solutions">
@@ -61,9 +61,9 @@
 
 	<!-- Head Libs -->
 	<script src="vendor/modernizr/modernizr.min.js"></script>
+	<script src="https://kit.fontawesome.com/f039a607ae.js" crossorigin="anonymous"></script>
 
-	<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-	
+
 	<!-- Hotjar Tracking Code for https://createcodex.com/ -->
 	<script>    (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -81,54 +81,43 @@
 
 	<!-- Boton de whatsapp -->
 	<a href="https://api.whatsapp.com/send?phone=543875622260&text=%C2%A1Hola!%20%C2%A1Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!%20%F0%9F%98%84" class="btn-wsp" target="_blank">
-		<i class="fa fa-whatsapp icono"></i>
+		<i class="fa fa-whatsapp" aria-hidden="true"></i>
 	</a>
 
 	<div class="body">
-		<header id="header" class="header-effect-shrink"
-			data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 100, 'stickyHeaderContainerHeight': 70}">
-			<div class="header-body border-top-0">
-				<div class="header-container container bg-color-light">
+		<header id="header" class="header-effect-shrink header-transparent" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+			<div class="header-body header-body-bottom-border border-top-0 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="900">
+				<div class="header-container container">
 					<div class="header-row">
-						<div class="header-column header-column-logo">
+						<div class="header-column">
 							<div class="header-row">
 								<div class="header-logo">
-									<a href="./index.html">
-										<img alt="Codex" width="150" src="img/logo-codex.png">
+									<a href="index.html">
+										<img src="img/logo-codex-min.png" width="60" alt="" />
 									</a>
 								</div>
 							</div>
 						</div>
-						<div class="header-column header-column-nav-menu justify-content-end">
+						<div class="header-column justify-content-end">
 							<div class="header-row">
-								<div class="header-nav header-nav-links order-2 order-lg-1">
-									<div
-										class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1">
+								<div class="header-nav header-nav-line header-nav-bottom-line header-nav-bottom-line-effect-1">
+									<div class="header-nav-main header-nav-main-text-capitalize header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
 										<nav class="collapse">
 											<ul class="nav nav-pills" id="mainNav">
-												<li class="dropdown-secondary">
-													<a class="nav-link" href="./index.html">
-														Inicio
-													</a>
-												</li>
-												<li class="dropdown-secondary">
-													<a class="nav-link" href="./soluciones.html">
-														Soluciones
-													</a>
-												</li>
-												<li class="dropdown-secondary">
-													<a class="nav-link" href="nosotros.html">
-														Nosotros
-													</a>
-												</li>
+												<li><a href="./index.html" class="nav-link active" data-hash data-hash-offset="0" data-hash-offset-lg="70">Inicio</a></li>
+												<li><a href="./soluciones.html" class="nav-link" data-hash data-hash-offset="0" data-hash-offset-lg="255">Soluciones</a></li>
+												<li><a href="./nosotros.html" class="nav-link" data-hash data-hash-offset="0" data-hash-offset-lg="35">Nosotros</a></li>
 											</ul>
 										</nav>
 									</div>
-									<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
-										data-bs-target=".header-nav-main nav">
-										<i class="fas fa-bars"></i>
-									</button>
 								</div>
+								<ul class="header-social-icons social-icons social-icons-clean social-icons-medium ms-0 ms-xl-3 d-none d-md-inline-flex">
+									<li class="social-icons-linkedin"><a href="https://www.linkedin.com/in/emilio-nicolas-cervera/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+								<a href="tel:+5493875622260" class="font-weight-semibold text-color-dark text-color-hover-primary text-decoration-none custom-font-size-2 ps-1 ms-lg-3 ms-xl-4">3875622260</a>
+								<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
+									<i class="fas fa-bars"></i>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -335,41 +324,54 @@
 										<li>5 secciones dentro de cada página.</li>
 										<li>3 páginas (a cerca de nosotros, servicios y contacto).</li>
 										<li>Reedireccionamiento a todas tus redes.</li>
-										<li>Hosting y dominio por un año.</li>
+										<li>Hosting y dominio por un año <b>(Este servico se abona por aparte)</b>.</li>
 										<li>1 hora de consultoría en marketing digital, con nuestra community manager <strong>gratis</strong>.</li>
-										<li>Diseño de tu logo, con nuestra diseñadora grafica <strong>gratis</strong>.</li>
-										<li>Tiempo de desarrollo estimado, 1 semana(Todo varía según la necesidad).</li>
-										<li>Todo esto por un precio de <b>$30.000.-</b> en único pago.</li>
+										<li>Tiempo de desarrollo estimado, dos semanas(Todo varía según la necesidad).</li>
+										<li>Todo esto por un precio de <b>$100.000.-</b> en único pago.</li>
 									</ul>
 									
-									<ul> <p><strong>Desarrollo de App Web</strong></p>
-										<li>Hasta 10 secciones por página.</li>
-										<li>Hasta 5 páginas.</li>
-										<li>Reedireccionamiento a todas tus redes.</li>
-										<li>Con panel autoadministrable.</li>
-										<li>Gestión de inicio de sesión.</li>
-										<li>Gestión de usuarios.</li>
-										<li>Hosting y dominio por un año.</li>
-										<li>1 hora de consultoría en marketing digital, con nuestra community manager <strong>gratis</strong>.</li>
-										<li>Diseño de tu logo, con nuestra diseñadora grafica <strong>gratis</strong>.</li>
-										<li>Tiempo de desarrollo estimado, 1 mes(Todo varía según la necesidad).</li>
-										<li>Todo esto por un precio de <b>$100.000.-</b> en único pago. <b>ESTE PRECIO ES BASE. PUEDE VARIAR SEGÚN LA COMPLEJIDAD DEL DESARROLLO.</b></p></li>
+									<ul> <p><strong>Desarrollo de Ap Web</strong></p>
+										<li>Este tipo de desarrollo es a medida, todo el contenido puede variar, para más información, comuníquese con nosotros.</li>
+										
 									</ul>
-									
-							<div class="col-7 text-md-center text-lg-end">
-								<a target="_blank" href="https://drive.google.com/file/d/1bOQZ-CVU2VxNYlls9qRU8iiIltiROh4f/view?usp=sharing"
-								  class="btn btn-modern btn-dark mt-3">Descargá el plan de Desarrollo de Página Web</a>
-							</div>
 							</div>
 						</div>
 					</div>
+					
+					<div class="card card-default">
+						<div class="card-header" id="collapse100Heading01">
+							<h4 class="card-title m-0">
+								<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
+									data-bs-toggle="collapse" data-bs-target="#collapse100Heading0" aria-expanded="false"
+									aria-controls="collapse100Heading0">
+									¿Qué debo contratar? ¿Una landing page o una aplicación web?
+								</a>
+							</h4>
+						</div>
+						<div id="collapse100Heading0" class="collapse" aria-labelledby="collapse100Heading01"
+							data-bs-parent="#accordion100">
+							<div class="card-body">
+								<p style="text-align: center;" class="mb-0">
+										<p>
+											Todo depende según tu necesidad. 
+											<br>A continuación te dejamos unos ejemplos para que sepas elegir bien. Un claro ejemplo de una <strong>landing page</strong> es el siguiente: <a href="https://www.expressvpn.com/es">Expressvpn</a>.
+											<br>Una landing page es un sitio de una sola página que tiene un único objetivo: conseguir que los visitantes realicen una acción determinada. Ya sea para vender un producto, captar correos electrónicos o conseguir registros para un evento, esta potente herramienta del marketing online puede impulsar la conversión. Las landing pages deben tener un mensaje claro, que se consigue con un encabezado descriptivo, algunos elementos visuales atractivos y una contundente llamada a la acción
+											<br>
+											<br>En cambio, una <strong>aplicación web</strong> sirve para amplios propositos. 
+											<br>Administrar usuarios, perfiles, productos, servicios, ventas y más.
+										</p>
+									</ul>
+							</div>
+						</div>
+					</div>
+
 					<div class="card card-default">
 						<div class="card-header" id="collapse100HeadingTwo">
 							<h4 class="card-title m-0">
 								<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
 									data-bs-toggle="collapse" data-bs-target="#collapse100Two" aria-expanded="false"
 									aria-controls="collapse100Two">
-									¿Puedo contratar solo el servicio de marketing digital o diseño de marca o una página web? 
+									¿Puedo contratar por aparte los servicios de desarrollo o marketing digital? 
 								</a>
 							</h4>
 						</div>
@@ -395,41 +397,7 @@
 							data-bs-parent="#accordion100">
 							<div class="card-body">
 								<p style="text-align: center;" class="mb-0">Según tu tipo de negocio y tus requerimientos, pero la base para un desarrollo de una página web 
-									dura entre una y dos semanas, ¡Si, somos super ágiles! ;)</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="card card-default">
-						<div class="card-header" id="collapse100HeadingSeven">
-							<h4 class="card-title m-0">
-								<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-									data-bs-toggle="collapse" data-bs-target="#collapse100Seven" aria-expanded="false"
-									aria-controls="collapse100Seven">
-									¿Por qué contratar una Diseñadora Gráfica para el branding de mi marca?
-								</a>
-							</h4>
-						</div>
-						<div id="collapse100Seven" class="collapse" aria-labelledby="collapse1HeadingSeven"
-							data-bs-parent="#accordion100">
-							<div class="card-body">
-								<p>En un mercado tan competitivo como el actual, es necesario que una marca se pueda distinguir de la otra. Y esto, por supuesto, se puede lograr a través del diseño de marca.
-
-									Para un diseño de marca apropiado deberás elegir el público objetivo, el tono de comunicación, los beneficios que ofrece tu producto (pueden ser emocionales) y el mensaje que desees trasmitir. Un buen diseño de marca es aquel que logra captar la atención del usuario.
-									
-									¡Contáctanos y te ayudamos a diseñar tu marca!</p>
-								<p class="mb-0">Nuestra diseñadora gráfica creará piezas de alta calidad y únicas para tu marca, tambien te proporcionará 
-									una marca duradera y que te represente, esto se diseñara en base a una estrategia no solo a una estética.
-								</p>
-								<p></p>
-								<p>¿Qué obtengo con la identidad de marca?</p>
-								<ul>
-									<li>Visión.</li>
-									<li>Misión.</li>
-									<li>Definición del público.</li>
-									<li>Voz de marca.</li>
-									<li>Manual de marca.</li>
-								</ul>
+									dura entre dos y tres semanas, ¡Si, somos super ágiles! ;)</p>
 							</div>
 						</div>
 					</div>
@@ -483,7 +451,7 @@
 							<div class="card-body">
 								<p style="text-align: center;" class="mb-0">¡Si! Lo podes hacer desde cualquier punto del país. Para firmar el contrato unicamente te 
 									enviamos un word, lo firmas, lo escaneas con tu celular y nos enviás el documento firmado. Esto no tiene 
-									ningún costo. ¡Para todo tipo de comunicación la realizamos a través de videollamadas o llamadas comunes, como más te quede cómodo!
+									ningún costo. ¡Para todo tipo de comunicación la realizamos a través de videollamadas, Whatsapp ó como más te quede cómodo!
 								</p>
 							</div>
 						</div>
@@ -550,7 +518,7 @@
 										<p class="text-3-5 line-height-9 mb-4 appear-animation"
 											data-appear-animation="fadeInUpShorterPlus"
 											data-appear-animation-delay="600">Tendrá un socio tecnológico estratégico,
-											que le ayudará a desarrollar e implementar nuevas tecnologías en forma
+											que te ayudará a desarrollar e implementar nuevas tecnologías en forma
 											oportuna y eficiente, como así también mantener preventivamente su
 											<span
 												class="highlight highlight-primary highlight-bg-opacity highlight-animated px-0"
@@ -573,55 +541,7 @@
 		</section>
 
 		<br>
-		<br>
 		<hr class="my-5">
-		<br>
-		<br>
-
-		<h1 style="text-align: center;">Quiénes confiaron en nosotros</h1>
-
-		<section class="call-to-action call-to-action-strong-grey call-to-action-in-footer">
-			<div class="container">
-				<div class="row text-center pb-4 mt-4">
-					<div class="owl-carousel owl-theme carousel-center-active-item mb-0"
-						data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
-						<div>
-							<img class="cliente" src="img/clients/cepridiasa.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/choza.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/enoc.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/futbol.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/libera.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/mj.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/np.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/radio.png" alt="">
-						</div>
-						<div>
-							<img class="cliente" src="img/clients/segura.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 		<br>
 
 		<div class="container">
