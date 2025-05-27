@@ -6,6 +6,47 @@
     color: rgb(33, 99, 156);
 }
 
+
+ .navbar-logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar-logo img {
+    max-height: 100%;
+    display: block;
+  }
+
+ .menu-fixed {
+    position: fixed;
+    height: 70px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    backdrop-filter: blur(60px);
+    background-color: rgba(206, 206, 206, 0.85);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    padding-top: 70px; /* espacio para que no tape el contenido */
+  }
+
+  .nav-link:hover {
+    color: rgb(255, 255, 255) !important;
+  }
+.menu-fixed .nav-link {
+  font-size: 1.1rem; /* Tamaño más grande */
+  font-weight: 500;  /* Un poco más marcada */
+}
+
+.menu-fixed .navbar-brand {
+  font-size: 1.3rem;
+}
+
 .cliente {
     width: 50px;
     margin-right: 2rem;
@@ -74,16 +115,9 @@ h4 {
     margin-top: 60px;
 }
 
-.fas{
-    visibility: false;
-}
 
 #trabajamos{
     text-align: center;
-}
-
-.fa, .fas {
-color: #FFF;
 }
 
 .scroll-to-top hidden-mobile visible{
