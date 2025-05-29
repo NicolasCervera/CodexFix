@@ -1,762 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Codex</title>
 
-<!-- Basic -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<title>Codex</title>
+	<!-- Estilos personalizados -->
+	<style>
+		.navbar-custom {
+			backdrop-filter: blur(8px);
+			background-color: rgba(255, 255, 255, 0.8);
+		}
 
-<meta name="keywords" content="WebSite Template" />
-<meta name="description" content="Codex - Solutions">
+		.nav-link {
+			color: #007bff;
+			transition: color 0.3s ease;
+		}
 
-<!-- Favicon -->
-<link rel="shortcut icon" href="img/logo-codex.png" type="image/x-icon" />
-<link rel="apple-touch-icon" href="img/logo-codex.png">
+		.nav-link:hover {
+			color: #ffffff;
+		}
 
-<!-- Mobile Metas -->
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-
-<!-- CSS de Bootstrap (ya lo debés tener si todo se ve bien) -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- JS de Bootstrap y dependencias -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Web Fonts  -->
-<link id="googleFonts"
-	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap"
-	rel="stylesheet" type="text/css">
-
-<!-- Vendor CSS -->
-<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-<link rel="stylesheet" href="vendor/animate/animate.compat.css">
-<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
-
-<!-- Theme CSS -->
-<link rel="stylesheet" href="css/theme.css">
-<link rel="stylesheet" href="css/theme-elements.css">
-<link rel="stylesheet" href="css/theme-blog.css">
-<link rel="stylesheet" href="css/theme-shop.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/fontello.css">
-<link rel="stylesheet" href="css/fontello-ie7.css">
-<link rel="stylesheet" href="css/fontello-ie7-codes.css">
-<link rel="stylesheet" href="css/fontello-embedded.css">
-<link rel="stylesheet" href="css/fontello-codes.css">
-
-<!-- Revolution Slider CSS -->
-<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
-<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
-<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
-
-<!-- Demo CSS -->
-<link rel="stylesheet" href="css/demos/demo-digital-agency.css">
-
-<!-- Skin CSS -->
-<link id="skinCSS" rel="stylesheet" href="css/skins/skin-digital-agency.css">
-
-<!-- Theme Custom CSS -->
-<link rel="stylesheet" href="css/codex.css">
-
-<!-- Font Awesome CDN oficial -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-<!-- Head Libs -->
-<script src="vendor/modernizr/modernizr.min.js"></script>
-<script src="https://kit.fontawesome.com/f039a607ae.js" crossorigin="anonymous"></script>
-
-
-<!-- Hotjar Tracking Code for https://createcodex.com/ -->
-<script>    (function (h, o, t, j, a, r) {
-		h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-		h._hjSettings = { hjid: 3154102, hjsv: 6 };
-		a = o.getElementsByTagName('head')[0];
-		r = o.createElement('script'); r.async = 1;
-		r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-		a.appendChild(r);
-	})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');</script>
-
-
+		.btn-wsp {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 9999;
+			background-color: #25d366;
+			color: white;
+			border-radius: 50%;
+			padding: 15px;
+			font-size: 24px;
+		}
+	</style>
 </head>
 
 <body>
 
-	<!-- Boton de whatsapp -->
-	<a href="https://api.whatsapp.com/send?phone=543875622260&text=%C2%A1Hola!%20%C2%A1Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!%20%F0%9F%98%84"
+	<!-- Botón WhatsApp -->
+	<a href="https://api.whatsapp.com/send?phone=543875622260&text=Hola!%20Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!"
 		class="btn-wsp" target="_blank">
-		<i class="fa fa-whatsapp" aria-hidden="true"></i>
+		<i class="fab fa-whatsapp" aria-hidden="true"></i>
 	</a>
 
-	<div class="body">
-
-		<!DOCTYPE html>
-		<html>
-
-		<head>
-
-			<!-- Basic -->
-			<meta charset="utf-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-			<title>Codex</title>
-
-			<meta name="keywords" content="WebSite Template" />
-			<meta name="description" content="Codex - Solutions">
-
-			<!-- Favicon -->
-			<link rel="shortcut icon" href="img/logo-codex.png" type="image/x-icon" />
-			<link rel="apple-touch-icon" href="img/logo-codex.png">
-
-			<!-- Mobile Metas -->
-			<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-
-			<!-- Web Fonts  -->
-			<link id="googleFonts"
-				href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap"
-				rel="stylesheet" type="text/css">
-
-			<link rel="stylesheet" href="css/codex.css">
-
-			<!-- Vendor CSS -->
-			<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-			<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-			<link rel="stylesheet" href="vendor/animate/animate.compat.css">
-			<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-			<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-			<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-			<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
-
-			<!-- Theme CSS -->
-			<link rel="stylesheet" href="css/theme.css">
-			<link rel="stylesheet" href="css/theme-elements.css">
-			<link rel="stylesheet" href="css/theme-blog.css">
-			<link rel="stylesheet" href="css/theme-shop.css">
-			<link rel="stylesheet" href="css/animation.css">
-			<link rel="stylesheet" href="css/fontello.css">
-			<link rel="stylesheet" href="css/fontello-ie7.css">
-			<link rel="stylesheet" href="css/fontello-ie7-codes.css">
-			<link rel="stylesheet" href="css/fontello-embedded.css">
-			<link rel="stylesheet" href="css/fontello-codes.css">
-
-			<!-- Revolution Slider CSS -->
-			<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
-			<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
-			<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
-
-			<!-- Demo CSS -->
-			<link rel="stylesheet" href="css/demos/demo-digital-agency.css">
-
-			<!-- Skin CSS -->
-			<link id="skinCSS" rel="stylesheet" href="css/skins/skin-digital-agency.css">
-
-			<!-- Head Libs -->
-			<script src="vendor/modernizr/modernizr.min.js"></script>
-			<script src="https://kit.fontawesome.com/f039a607ae.js" crossorigin="anonymous"></script>
-			<script src="https://kit.fontawesome.com/f039a607ae.js" crossorigin="anonymous"></script>
-
-			<!-- Hotjar Tracking Code for https://createcodex.com/ -->
-			<script>    (function (h, o, t, j, a, r) {
-					h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-					h._hjSettings = { hjid: 3154102, hjsv: 6 };
-					a = o.getElementsByTagName('head')[0];
-					r = o.createElement('script'); r.async = 1;
-					r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-					a.appendChild(r);
-				})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');</script>
-
-
-		</head>
-
-		<body>
-
-			<!-- Boton de whatsapp -->
-			<a href="https://api.whatsapp.com/send?phone=543875622260&text=%C2%A1Hola!%20%C2%A1Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!%20%F0%9F%98%84"
-				class="btn-wsp" target="_blank">
-				<i class="fa fa-whatsapp" aria-hidden="true"></i>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom shadow">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="img/logo-codex.png" alt="Codex" width="120" height="50" />
 			</a>
-
-			<div class="body">
-
-				<div id="header-wrapper">
-
-					<header class="menu-fixed">
-						<nav class="navbar">
-							<div class="container d-flex flex-wrap align-items-center justify-content-between py-2">
-
-								<a href="index.html" class="navbar-logo">
-									<img src="img/logo-codex-min.png" alt="Logo Codex" />
-								</a>
-
-								<!-- MENÚ -->
-								<ul class="nav flex-wrap align-items-center">
-									<li class="nav-item">
-										<a href="./index.html" class="nav-link px-3 text-primary">Inicio</a>
-									</li>
-									<li class="nav-item">
-										<a href="./soluciones.html" class="nav-link px-3 text-primary">Productos</a>
-									</li>
-									<li class="nav-item">
-										<a href="./nosotros.html" class="nav-link px-3 text-primary">Nosotros</a>
-									</li>
-								</ul>
-
-								<a href="tel:+5493875622260"
-									class="d-none d-md-block fw-bold text-primary align-self-center text-decoration-none">
-									+5493875622260</a>
-
-							</div>
-						</nav>
-					</header>
-
-					<!-- Menú Mobile -->
-					<div id="mobileMenu" class="mobile-menu-custom d-lg-none">
-						<nav id="mainNavCollapse" class="collapse header-nav-mobile">
-							<ul class="nav nav-pills" id="mainNav">
-								<li><a href="./index.html" class="nav-link active">Inicio</a></li>
-								<li><a href="./soluciones.html" class="nav-link">Soluciones</a></li>
-								<li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-
-				<div role="main" class="main">
-
-					<div class="owl-carousel dots-inside dots-horizontal-center show-dots-hover nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
-						data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 1}, '1199': {'items': 1}}, 'loop': false, 'autoHeight': false, 'margin': 0, 'dots': true, 'dotsVerticalOffset': '-75px', 'nav': true, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut', 'mouseDrag': false, 'touchDrag': false, 'pullDrag': false, 'autoplay': true, 'autoplayTimeout': 9000, 'autoplayHoverPause': true, 'rewind': true}">
-						<div class="position-relative overlay overlay-show overlay-op-8"
-							data-dynamic-height="['670px','670px','670px','550px','500px']"
-							style="background-image: url(img/inicio.png); background-size: cover; background-position: center; height: 670px;">
-							<div class="container position-relative z-index-3 h-100">
-								<div class="row justify-content-center align-items-center h-100">
-									<div class="col-lg-6">
-										<div class="d-flex flex-column align-items-center">
-											<h2 class="text-color-light font-weight-extra-bold text-12 mb-3 appear-animation"
-												data-appear-animation="blurIn" data-appear-animation-delay="500"
-												data-plugin-options="{'minWindowWidth': 0}">CODEX</h2>
-											<h3 class="position-relative text-color-light text-5 line-height-5 font-weight-medium px-4 mb-2 appear-animation"
-												data-appear-animation="fadeInDownShorter"
-												data-plugin-options="{'minWindowWidth': 0}" id="trabajamos">
-
-											</h3>
-											<p class="position-relative text-color-light text-5 line-height-5 text-align-justify font-weight-medium px-4 mb-2 appear-animation"
-												data-appear-animation="fadeInDownShorter"
-												data-plugin-options="{'minWindowWidth': 0}" id="trabajamos">¡Soluciones
-												integrales!</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="container">
-
-					<div class="row pt-5">
-						<div class="col">
-
-							<div class="row text-center pb-5">
-								<div class="col-md-9 mx-md-auto">
-									<div class="overflow-hidden mb-3">
-										<h1 class="word-rotator slide font-weight-bold text-6 mb-0 appear-animation"
-											data-appear-animation="maskUp">
-											<span>Somos Codex, </span>
-											<span class="word-rotator-words bg-primary">
-												<b class="is-visible">Creamos</b>
-												<b>Desarrollamos</b>
-											</span>
-											<span>Soluciones</span>
-										</h1>
-									</div>
-									<div class="overflow-hidden mb-3">
-										<p class="lead mb-0 appear-animation" data-appear-animation="maskUp"
-											data-appear-animation-delay="200">
-											¿!Tenés tu negocio pero no tenés tu <strong>página web</strong> ni tampoco
-											tu
-											marca!? ¡Dejá todo en nuestras manos!
-											¡Te ofrecemos una solución integral en donde desarrollamos tu página,
-											creamos tu
-											marca y además una campaña estratégica de marketing para que llegues a todos
-											tus
-											potenciales clientes!
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<hr class="my-5">
-				<br>
-				<br>
-
-				<div class="container py-5 my-4">
-					<div class="row">
-						<div class="col">
-
-							<div class="tabs tabs-bottom tabs-center tabs-simple custom-tabs-style-1">
-								<ul class="nav nav-tabs">
-									<li class="nav-item w-25">
-										<a class="nav-link pb-2 px-5-5 active" href="#tabsNavigationSimpleIcons1"
-											data-bs-toggle="tab">
-											<span class="featured-boxes featured-boxes-style-6 p-0 m-0">
-												<span
-													class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<img width="70" height="70"
-															src="img/demos/digital-agency/icons/arrow-symbols.svg"
-															alt="" data-icon
-															data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary px-5 py-4'}" />
-														<h4 class="positive-ls-3 font-weight-bold text-3">ESTRATEGIA
-														</h4>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li class="nav-item w-25">
-										<a class="nav-link pb-2 px-5-5" href="#tabsNavigationSimpleIcons2"
-											data-bs-toggle="tab">
-											<span class="featured-boxes featured-boxes-style-6 p-0 m-0">
-												<span
-													class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<img width="70" height="70"
-															src="img/demos/digital-agency/icons/lamp.svg" alt=""
-															data-icon
-															data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary px-5 py-4'}" />
-														<h4 class="positive-ls-3 font-weight-bold text-3">CREATIVIDAD
-														</h4>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li class="nav-item w-25">
-										<a class="nav-link pb-2 px-5-5" href="#tabsNavigationSimpleIcons3"
-											data-bs-toggle="tab">
-											<span class="featured-boxes featured-boxes-style-6 p-0 m-0">
-												<span
-													class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<img width="70" height="70"
-															src="img/demos/digital-agency/icons/mac.svg" alt=""
-															data-icon
-															data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary px-5 py-4'}" />
-														<h4 class="positive-ls-3 font-weight-bold text-3">DESARROLLO
-														</h4>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-									<li class="nav-item w-25">
-										<a class="nav-link pb-2 px-5-5" href="#tabsNavigationSimpleIcons4"
-											data-bs-toggle="tab">
-											<span class="featured-boxes featured-boxes-style-6 p-0 m-0">
-												<span
-													class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-													<span class="box-content p-0 m-0">
-														<img width="70" height="70"
-															src="img/demos/digital-agency/icons/megaphone.svg" alt=""
-															data-icon
-															data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary px-5 py-4'}" />
-														<h4 class="positive-ls-3 font-weight-bold text-3">MARKETING</h4>
-													</span>
-												</span>
-											</span>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content px-lg-5 mx-lg-5">
-									<div class="tab-pane active" id="tabsNavigationSimpleIcons1">
-										<div class="text-center">
-											<p class="text-3-5 line-height-9">Expandí tu negocio al universo digital.
-												Construimos tu tienda de venta online para que llegues a potenciales
-												compradores
-												en cualquier día y horario, y desde cualquier dispositivo (todas
-												nuestras
-												creaciones son 100% mobile responsive).</p>
-										</div>
-									</div>
-									<div class="tab-pane" id="tabsNavigationSimpleIcons2">
-										<div class="text-center">
-											<p class="text-3-5 line-height-9">Llevamos la innovación en nuestro ADN.
-												Creamos
-												soluciones de vanguardia con las últimas tecnologías y tendencias. </p>
-										</div>
-									</div>
-									<div class="tab-pane" id="tabsNavigationSimpleIcons3">
-										<div class="text-center">
-											<p class="text-3-5 line-height-9">En Codex nos comprometemos a cumplir con
-												los
-												tiempos de entrega de tu sitio. Si aún no tenés tu pagina web
-												empresarial este
-												es tu momento. Desarrollamos páginas web con un diseño de vanguardia,
-												elegante y
-												totalmente adaptable por la mejor empresa de diseño web</p>
-										</div>
-									</div>
-									<div class="tab-pane" id="tabsNavigationSimpleIcons4">
-										<div class="text-center">
-											<p class="text-3-5 line-height-9">Difundí tu marca y obtené renombre por
-												sobre tu
-												competencia. Creamos, gestionamos y generamos contenido a través de las
-												redes
-												sociales (Facebook, Instagram y otras) para expandir y posicionar tu
-												marca por
-												encima del resto.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<br>
-				<hr class="my-5">
-				<br>
-				<br>
-
-
-				<h1 style="text-align: center;">Preguntas frecuentes</h1>
-				<div class="row ">
-					<div class="col-12">
-						<div class="accordion accordion-modern-status accordion-modern-status-primary"
-							id="accordion100">
-
-
-							<div class="card card-default">
-								<div class="card-header" id="collapse100Heading01">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Heading0"
-											aria-expanded="false" aria-controls="collapse100Heading0">
-											¿Qué debo contratar? ¿Una landing page o una aplicación web?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Heading0" class="collapse" aria-labelledby="collapse100Heading01"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">
-										<p>
-											Todo depende según tu necesidad.
-											<br>A continuación te dejamos unos ejemplos para que sepas elegir bien. Un
-											claro ejemplo de una <strong>landing page</strong> es el siguiente: <a
-												href="https://www.expressvpn.com/es">Expressvpn</a>.
-											<br>Una landing page es un sitio de una sola página que tiene un único
-											objetivo: conseguir que los visitantes realicen una acción determinada. Ya
-											sea para vender un producto, captar correos electrónicos o conseguir
-											registros para un evento, esta potente herramienta del marketing online
-											puede impulsar la conversión. Las landing pages deben tener un mensaje
-											claro, que se consigue con un encabezado descriptivo, algunos elementos
-											visuales atractivos y una contundente llamada a la acción
-											<br>
-											<br>En cambio, una <strong>aplicación web</strong> sirve para amplios
-											propositos.
-											<br>Administrar usuarios, perfiles, productos, servicios, ventas y más.
-										</p>
-										</ul>
-									</div>
-								</div>
-							</div>
-
-							<div class="card card-default">
-								<div class="card-header" id="collapse100HeadingTwo">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Two"
-											aria-expanded="false" aria-controls="collapse100Two">
-											¿Puedo contratar por aparte los servicios de desarrollo o marketing digital?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Two" class="collapse" aria-labelledby="collapse100HeadingTwo"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">¡Si! No hace falta que contrates los
-											tres servicios, disponemos de paquetes de asesoramiento individuales
-											según tu necesidad.</p>
-									</div>
-								</div>
-							</div>
-							<div class="card card-default">
-								<div class="card-header" id="collapse100HeadingThree">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Three"
-											aria-expanded="false" aria-controls="collapse100Three">
-											¿Cuánto tarda el diseño de una página web?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Three" class="collapse" aria-labelledby="collapse100HeadingThree"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">Según tu tipo de negocio y tus
-											requerimientos, pero la base para un desarrollo de una página web
-											dura entre dos y tres semanas, ¡Si, somos super ágiles! ;)</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="card card-default">
-								<div class="card-header" id="collapse100Headingo">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100o"
-											aria-expanded="false" aria-controls="collapse100o">
-											¿Por qué contratar una Community Manager?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100o" class="collapse" aria-labelledby="collapse1Headingo"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p class="mb-0">Un Community Manager es definitivamente una parte clave de
-											cualquier estrategia social
-											Se encarga de gestionar las relaciones con los clientes e interactúar con
-											ellos, en definitiva le da vida a tu marca.
-										<p></p>
-										<p>¿Qué hace un Community Manager?</p>
-										<ul>
-											<li>Mejora la imágen de tu marca.</li>
-											<li>Brinda una mejor atención al cliente.</li>
-											<li>Distribuye contenido de calidad.</li>
-											<li>Aumenta la afinidad con tu audiencia.</li>
-											<li>Gestiona las métricas.</li>
-											<li>Multiplica tu alcance y relevancia como marca.</li>
-											<li>Se encarga de publicar constantemente en tus redes sociales.</li>
-											<li>Responde mensajes y comentarios.</li>
-											<li>Crea interacción con tus seguidores.</li>
-										</ul>
-										</p>
-									</div>
-								</div>
-							</div>
-
-
-							<div class="card card-default">
-								<div class="card-header" id="collapse100HeadingSix">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Six"
-											aria-expanded="false" aria-controls="collapse100Six">
-											¿Puedo contratar el servicio desde cualquier punto del país?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Six" class="collapse" aria-labelledby="collapse1HeadingSix"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">¡Si! Lo podes hacer desde cualquier
-											punto del país. Para firmar el contrato unicamente te
-											enviamos un word, lo firmas, lo escaneas con tu celular y nos enviás el
-											documento firmado. Esto no tiene
-											ningún costo. ¡Para todo tipo de comunicación la realizamos a través de
-											videollamadas, Whatsapp o como más te quede cómodo!
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="card card-default">
-								<div class="card-header" id="collapse100HeadingFour">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Four"
-											aria-expanded="false" aria-controls="collapse100Four">
-											¿Qué métodos de pagos reciben?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Four" class="collapse" aria-labelledby="collapse100HeadingFour"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">Aceptamos solo transferencias
-											bancarias y pagos en efectivo.</p>
-									</div>
-								</div>
-							</div>
-							<div class="card card-default">
-								<div class="card-header" id="collapse100HeadingFive">
-									<h4 class="card-title m-0">
-										<a class="accordion-toggle bg-color-light text-color-dark font-weight-bold collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapse100Five"
-											aria-expanded="false" aria-controls="collapse100Five">
-											¿Tiene garantía el servicio?
-										</a>
-									</h4>
-								</div>
-								<div id="collapse100Five" class="collapse" aria-labelledby="collapse1HeadingFive"
-									data-bs-parent="#accordion100">
-									<div class="card-body">
-										<p style="text-align: center;" class="mb-0">Te ofrecemos garantía en tu página.
-											¿Cómo funciona la garantía? Ambas partes, firmamos
-											contrato en donde constatamos el tiempo de desarrollo del servicio, el pago,
-											el metodo de pago y la cantidad de cambios
-											que puede tener tu página. Si no estas conforme con la página, tenes hasta 5
-											cambios para relizar.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<br>
-				<hr class="my-5">
-				<br>
-				<br>
-
-
-				<section class="section bg-color-grey-scale-1 border-0 position-relative py-0 m-0">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-6 p-0">
-								<div class="h-100 m-0">
-									<div class="row m-0">
-										<div class="col-half-section col-half-section-right ms-auto py-5">
-											<div class="px-3 py-5">
-												<h2 class="que font-weight-bold text-color-dark text-9 mb-4 appear-animation"
-													data-appear-animation="fadeInUpShorterPlus"
-													data-appear-animation-delay="200">¿Qué hacemos?</h2>
-												<p class="text-3-5 line-height-9 mb-4 appear-animation"
-													data-appear-animation="fadeInUpShorterPlus"
-													data-appear-animation-delay="600">Tendrá un socio tecnológico
-													estratégico,
-													que te ayudará a desarrollar e implementar nuevas tecnologías en
-													forma
-													oportuna y eficiente, como así también mantener preventivamente su
-													<span
-														class="highlight highlight-primary highlight-bg-opacity highlight-animated px-0"
-														data-appear-animation="highlight-animated-start"
-														data-appear-animation-delay="800"
-														data-plugin-options="{'flagClassOnly': true}">página web.</span>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 p-0">
-								<section class="parallax section section-parallax h-100 m-0" data-plugin-parallax
-									data-plugin-options="{'speed': 1.5, 'parallaxHeight': '135%'}"
-									data-image-src="img/desarrolloweb.jpg" style="min-height: 315px;">
-								</section>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<br>
-				<hr class="my-5">
-				<br>
-
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 col-md-8">
-							<h4 class="font-weight-normal line-height-1 mb-5">Nuestra <strong
-									class="font-weight-extra-bold">Dirección</strong></h4>
-							<ul class="list list-icons list-icons-style-3 mt-5">
-								<li><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Salta</li>
-								<li><i class="fas fa-phone"></i> <strong>Celular:</strong><a
-										href="https://api.whatsapp.com/send?phone=543875622260&text=%C2%A1Hola!%20%C2%A1Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!%20%F0%9F%98%84">(387)
-										5622260</a></li>
-								<li><i class="far fa-envelope"></i> <strong>Email:</strong> <a
-										href="mailto:emilionicolascervera@gmail.com">emilionicolascervera@gmail.com</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-lg-4 col-md-4">
-
-							<h4 class="font-weight-normal">Nuestros <strong
-									class="font-weight-extra-bold">Horarios</strong>
-							</h4>
-							<ul class="list list-icons list-dark mt-4">
-								<li><i class="far fa-clock"></i> Lunes - Viernes - 8:00HS a 21:00HS</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<br>
-				<br>
-				<br>
-
-				<section class="section section-height-3 bg-color-grey-scale-1 border-0 m-0">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-10 text-md-center text-lg-start mb-4 mb-lg-0">
-								<h2 class="text-color-dark font-weight-bold mb-1">¡Nos adaptamos a tus necesidades!
-									¡CODEX es algo totalmente personalizado para ti!
-								</h2>
-							</div>
-							<div class="col-lg-2 text-md-center text-lg-end">
-								<a href="https://api.whatsapp.com/send?phone=543875622260&text=%C2%A1Hola!%20%C2%A1Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!%20%F0%9F%98%84"
-									class="btn btn-modern btn-dark mt-3">Contactanos</a>
-							</div>
-						</div>
-					</div>
-				</section>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Soluciones</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+				</ul>
+				<span class="navbar-text ms-auto d-none d-lg-inline">
+					<a href="tel:+543875622260" class="text-dark text-decoration-none"><i
+							class="fas fa-phone-alt me-2"></i>3875 622260</a>
+				</span>
 			</div>
+		</div>
+	</nav>
 
-			<footer id="footer" class="mt-0">
-				<div class="container py-2">
-					<div class="row py-4">
-						<div
-							class="col-md-12 d-flex align-items-center justify-content-center justify-content-md-start mb-12 mb-lg-0">
-							<p class="text-color-grey text-3-5">Desarrollado por <a href="./index.html">Codex</a> ©
-								2022. Todos los derechos reservados.</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-	</div>
+	<!-- Contenido de prueba -->
+	<main class="container" style="padding-top: 100px;">
+		<h1 class="text-center">Bienvenido a Codex</h1>
+		<p class="text-center">Este es un ejemplo de navegación responsive funcional.</p>
+	</main>
 
-	<!-- Vendor -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-	<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-	<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-	<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-	<script src="vendor/lazysizes/lazysizes.min.js"></script>
-	<script src="vendor/isotope/jquery.isotope.min.js"></script>
-	<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="vendor/vide/jquery.vide.min.js"></script>
-	<script src="vendor/vivus/vivus.min.js"></script>
-
-	<!-- Theme Base, Components and Settings -->
-	<script src="js/theme.js"></script>
-
-	<!-- Current Page Vendor and Views -->
-	<script src="js/views/view.contact.js"></script>
-
-	<!-- Theme Custom -->
-	<script src="js/custom.js"></script>
-
-	<!-- Theme Initialization Files -->
-	<script src="js/theme.init.js"></script>
-
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

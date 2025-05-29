@@ -7,34 +7,35 @@
 }
 
 
-.navbar-logo {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
+@media (min-width: 769px) {
+    .sticky-header {
+        padding-top: 10px;
+    }
+
+    .navbar-brand img {
+        margin-top: 0;
+    }
+
+    .navbar-toggler {
+        margin-top: 0;
+    }
 }
 
-.navbar-logo img {
-    max-height: 100%;
-    display: block;
+
+#header .header-container {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
-.menu-fixed {
-    position: fixed;
-    height: 80px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1050;
-    backdrop-filter: blur(60px);
-    background-color: rgba(206, 206, 206, 0.85);
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+#header {
+    margin-top: -25px !important;
 }
 
-body {
-    padding-top: 70px;
-    /* espacio para que no tape el contenido */
+.header-logo {
+    padding-top: 10px;
 }
+
+
 
 .nav-link:hover {
     color: rgb(255, 255, 255) !important;
