@@ -4,83 +4,243 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Codex</title>
-
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-	<!-- Estilos personalizados -->
-	<style>
-		.navbar-custom {
-			backdrop-filter: blur(8px);
-			background-color: rgba(255, 255, 255, 0.8);
-		}
-
-		.nav-link {
-			color: #007bff;
-			transition: color 0.3s ease;
-		}
-
-		.nav-link:hover {
-			color: #ffffff;
-		}
-
-		.btn-wsp {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			z-index: 9999;
-			background-color: #25d366;
-			color: white;
-			border-radius: 50%;
-			padding: 15px;
-			font-size: 24px;
-		}
-	</style>
+	<title>Codex Solutions - Innovación Digital</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="./css/codex.css" />
 </head>
 
 <body>
-
-	<!-- Botón WhatsApp -->
-	<a href="https://api.whatsapp.com/send?phone=543875622260&text=Hola!%20Vi%20esto%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web!"
-		class="btn-wsp" target="_blank">
-		<i class="fab fa-whatsapp" aria-hidden="true"></i>
-	</a>
-
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom shadow">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
-				<img src="img/logo-codex.png" alt="Codex" width="120" height="50" />
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Soluciones</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+	<header class="header" id="header">
+		<div class="container header-row">
+			<a href="#" class="logo">Codex</a>
+			<nav class="nav" id="nav">
+				<ul class="nav-list">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#nosotros">Nosotros</a></li>
+					<li><a href="#servicios">Servicios</a></li>
+					<li><a href="#porque">¿Por qué elegirnos?</a></li>
+					<li><a href="#faq">FAQs</a></li>
+					<li><a href="#contacto">Contacto</a></li>
 				</ul>
-				<span class="navbar-text ms-auto d-none d-lg-inline">
-					<a href="tel:+543875622260" class="text-dark text-decoration-none"><i
-							class="fas fa-phone-alt me-2"></i>3875 622260</a>
-				</span>
+			</nav>
+			<button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación"><i
+					class="fas fa-bars"></i></button>
+		</div>
+	</header>
+
+	<section id="inicio" class="hero">
+		<div class="container">
+			<h1 class="hero-title">CODEX SOLUTIONS</h1>
+			<p class="hero-subtitle">INNOVACIÓN, TECNOLOGÍA, RESULTADOS</p>
+			<a href="#nosotros" class="btn btn-primary">Descubre más</a>
+		</div>
+	</section>
+
+	<section id="nosotros" class="about section-padding">
+		<div class="container">
+			<h2 class="section-title">¿Quiénes somos?</h2>
+			<p class="section-description">Somos una empresa apasionada por la tecnología y la innovación. Nuestro
+				objetivo es transformar ideas en soluciones digitales impactantes para empresas de todos los tamaños.
+			</p>
+			<p class="section-description">En Codex trabajamos con compromiso, creatividad y tecnología de punta para
+				ayudarte a alcanzar el éxito digital.</p>
+
+			<div class="features-grid">
+				<div class="feature-item">
+					<i class="fas fa-code feature-icon"></i>
+					<h3>Desarrollo a Medida</h3>
+					<p>Aplicaciones web y móviles personalizadas que impulsan tu negocio.</p>
+				</div>
+				<div class="feature-item">
+					<i class="fas fa-palette feature-icon"></i>
+					<h3>Diseño UI/UX</h3>
+					<p>Experiencias visuales modernas, intuitivas y centradas en el usuario.</p>
+				</div>
+				<div class="feature-item">
+					<i class="fas fa-share-alt feature-icon"></i>
+					<h3>Marketing Digital</h3>
+					<p>Estrategias efectivas para potenciar tu presencia y engagement online.</p>
+				</div>
+				<div class="feature-item">
+					<i class="fas fa-chart-line feature-icon"></i>
+					<h3>Business Intelligence</h3>
+					<p>Transformamos tus datos en información valiosa para decisiones estratégicas.</p>
+				</div>
 			</div>
 		</div>
-	</nav>
+	</section>
 
-	<!-- Contenido de prueba -->
-	<main class="container" style="padding-top: 100px;">
-		<h1 class="text-center">Bienvenido a Codex</h1>
-		<p class="text-center">Este es un ejemplo de navegación responsive funcional.</p>
-	</main>
+	<section id="servicios" class="services section-padding">
+		<div class="container">
+			<h2 class="section-title">Nuestros Servicios</h2>
+			<p class="section-description">Ofrecemos un abanico completo de soluciones digitales adaptadas a tus
+				desafíos.</p>
+			<div class="services-grid">
+				<div class="service-card">
+					<i class="fas fa-laptop-code service-icon"></i>
+					<h3>Desarrollo Web</h3>
+					<p>Creación de sitios web corporativos, e-commerce y plataformas complejas.</p>
+				</div>
+				<div class="service-card">
+					<i class="fas fa-mobile-alt service-icon"></i>
+					<h3>Desarrollo Móvil</h3>
+					<p>Aplicaciones nativas e híbridas para iOS y Android con la mejor experiencia.</p>
+				</div>
+				<div class="service-card">
+					<i class="fas fa-bezier-curve service-icon"></i>
+					<h3>Branding y Diseño</h3>
+					<p>Desde logotipos hasta guías de marca, creamos identidades visuales impactantes.</p>
+				</div>
+				<div class="service-card">
+					<i class="fas fa-bullhorn service-icon"></i>
+					<h3>SEO y SEM</h3>
+					<p>Optimizamos tu visibilidad en buscadores para que llegues a más clientes.</p>
+				</div>
+				<div class="service-card">
+					<i class="fas fa-cloud service-icon"></i>
+					<h3>Consultoría Cloud</h3>
+					<p>Migración y optimización de infraestructuras en la nube para escalabilidad.</p>
+				</div>
+				<div class="service-card">
+					<i class="fas fa-shield-alt service-icon"></i>
+					<h3>Ciberseguridad</h3>
+					<p>Protegemos tus activos digitales con soluciones de seguridad robustas.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<!-- Scripts -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<section id="porque" class="why section-padding">
+		<div class="container bg-white-overlay">
+			<h2 class="section-title">¿Por qué elegirnos?</h2>
+			<p class="section-description">En Codex, no solo desarrollamos software: construimos soluciones pensadas
+				estratégicamente para transformar tu empresa.</p>
+			<ul class="why-list">
+				<li><i class="fas fa-check-circle check-icon"></i> Equipo multidisciplinario con experiencia real y
+					pasión por la innovación.</li>
+				<li><i class="fas fa-check-circle check-icon"></i> Soluciones a medida, escalables y modernas, adaptadas
+					a tu visión.</li>
+				<li><i class="fas fa-check-circle check-icon"></i> Transparencia total y acompañamiento constante en
+					cada etapa del proceso.</li>
+				<li><i class="fas fa-check-circle check-icon"></i> Implementación de tecnología de vanguardia y
+					rendimiento garantizado.</li>
+				<li><i class="fas fa-check-circle check-icon"></i> Filosofía de mejora continua y aprendizaje para tu
+					éxito a largo plazo.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="faq" class="faq section-padding">
+		<div class="container">
+			<h2 class="section-title">Preguntas Frecuentes</h2>
+			<div class="accordion-container">
+				<div class="accordion-item">
+					<button class="accordion-header">
+						<h3>¿Trabajan con empresas de cualquier tamaño?</h3>
+						<i class="fas fa-chevron-down accordion-icon"></i>
+					</button>
+					<div class="accordion-content">
+						<p>Sí, en Codex Solutions ofrecemos soluciones escalables y personalizadas, adaptadas a las
+							necesidades específicas de pymes, startups y grandes organizaciones. Nuestro objetivo es
+							impulsar el crecimiento de cualquier tipo de negocio.</p>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header">
+						<h3>¿Cómo puedo comenzar un proyecto con ustedes?</h3>
+						<i class="fas fa-chevron-down accordion-icon"></i>
+					</button>
+					<div class="accordion-content">
+						<p>¡Es muy sencillo! Solo tenés que escribirnos desde nuestro formulario de contacto o enviarnos
+							un email a info@codex.com. Nos pondremos en contacto a la brevedad para entender tus
+							necesidades y dar el primer paso.</p>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header">
+						<h3>¿Cuánto tiempo toma desarrollar una solución digital?</h3>
+						<i class="fas fa-chevron-down accordion-icon"></i>
+					</button>
+					<div class="accordion-content">
+						<p>El tiempo de desarrollo varía significativamente según la complejidad y el alcance del
+							proyecto. Sin embargo, te garantizamos un cronograma detallado y transparente desde el
+							inicio, con hitos claros y comunicación constante para que siempre estés informado.</p>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header">
+						<h3>¿Ofrecen soporte post-lanzamiento?</h3>
+						<i class="fas fa-chevron-down accordion-icon"></i>
+					</button>
+					<div class="accordion-content">
+						<p>Absolutamente. En Codex no solo creamos soluciones, también aseguramos su óptimo
+							funcionamiento. Ofrecemos planes de soporte y mantenimiento post-lanzamiento para garantizar
+							la estabilidad, seguridad y evolución continua de tu proyecto.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contacto" class="contact section-padding">
+		<div class="container">
+			<h2 class="section-title">Contáctanos</h2>
+			<p class="section-description">¿Tenés una idea o un proyecto épico en mente? Hablá con nosotros. Trabajemos
+				juntos y hagamos algo genial.</p>
+
+			<div class="contact-info">
+				<p><i class="fas fa-envelope contact-icon"></i> <a href="mailto:info@codex.com">info@codex.com</a></p>
+				<p><i class="fas fa-phone contact-icon"></i> <a href="tel:+543875551234">+54 387 555 1234</a></p>
+				<p><i class="fas fa-map-marker-alt contact-icon"></i> General Güemes, Salta - Argentina</p>
+			</div>
+
+			<form class="contact-form">
+				<div class="form-group">
+					<input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+				</div>
+				<div class="form-group">
+					<input type="email" id="email" name="email" placeholder="Tu Email" required>
+				</div>
+				<div class="form-group">
+					<textarea id="message" name="message" rows="6" placeholder="Tu Mensaje" required></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container footer-content">
+			<div class="footer-logo">Codex</div>
+			<nav class="footer-nav">
+				<ul class="footer-links">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#nosotros">Nosotros</a></li>
+					<li><a href="#servicios">Servicios</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</nav>
+			<div class="social-links">
+				<a href="https://facebook.com/codex" target="_blank" aria-label="Facebook de Codex"><i
+						class="fab fa-facebook-f"></i></a>
+				<a href="https://twitter.com/codex" target="_blank" aria-label="Twitter de Codex"><i
+						class="fab fa-twitter"></i></a>
+				<a href="https://linkedin.com/company/codex" target="_blank" aria-label="LinkedIn de Codex"><i
+						class="fab fa-linkedin-in"></i></a>
+				<a href="https://instagram.com/codex" target="_blank" aria-label="Instagram de Codex"><i
+						class="fab fa-instagram"></i></a>
+			</div>
+			<p class="copyright">&copy; 2025 Codex Solutions. Todos los derechos reservados.</p>
+		</div>
+	</footer>
+
+	<script src="./js/script.js"></script>
 </body>
 
 </html>
