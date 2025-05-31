@@ -189,83 +189,80 @@ a:hover {
     cursor: pointer;
 }
 
+
+/* Modifica esta sección en tu codex.css, reemplazando la regla .btn-primary */
+
 .btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    /* Padding un poco más generoso */
     background-color: var(--color-accent);
+    /* Tu color cian brillante */
     color: var(--color-primary-dark);
-}
-
-.btn-primary:hover {
-    background-color: #00BFFF;
-    /* Un cian ligeramente más claro */
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 212, 255, 0.3);
-}
-
-/* --- Hero Section --- */
-.hero {
-    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
-    color: var(--color-text-light);
-    text-align: center;
-    padding: 8rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    /* Mayor altura para impacto */
+    /* Color del texto del botón */
+    border: none;
+    border-radius: var(--border-radius-primary);
+    font-size: 1.1rem;
+    /* Un poco más grande para destacar */
+    font-weight: 700;
+    /* Más audaz */
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
     position: relative;
+    z-index: 1;
     overflow: hidden;
-    /* Para elementos de fondo */
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.4),
+        0 4px 6px rgba(0, 0, 0, 0.2),
+        0 0 10px rgba(0, 212, 255, 0.3);
+
+    transform: translateY(0);
 }
 
-/* Fondo abstracto con animación */
-.hero::before {
+.btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
-    animation: backgroundMove 20s infinite alternate ease-in-out;
-    z-index: 1;
+    border-radius: var(--border-radius-primary);
+    background: linear-gradient(to bottom, #00A3CC, #007C9E);
+    z-index: -1;
+    transform: translateY(6px);
+    transition: transform var(--transition-speed), background var(--transition-speed);
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes backgroundMove {
-    0% {
-        background-position: 0% 0%;
-    }
+.btn-primary:hover {
+    transform: translateY(2px);
+    background-color: #00BFFF;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 5px rgba(0, 212, 255, 0.2);
+}
 
-    100% {
-        background-position: 100% 100%;
-    }
+.btn-primary:hover::before {
+    transform: translateY(0);
+    background: linear-gradient(to bottom, #00BFFF, #0099CC);
+}
+
+.btn-primary:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.btn-primary:active::before {
+    transform: translateY(-2px);
+    background: linear-gradient(to bottom, #0099CC, #006699);
 }
 
 
-.hero .container {
-    position: relative;
-    z-index: 2;
-    /* Asegura que el contenido esté sobre el fondo abstracto */
-}
+/* --- Hero Section --- */
 
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease forwards;
-    letter-spacing: 2px;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-    /* Efecto de brillo */
-}
-
-.hero-subtitle {
-    font-size: 1.6rem;
-    margin-bottom: 3rem;
-    animation: fadeIn 1.5s ease forwards;
-    opacity: 0.9;
-}
-
-@keyframes fadeIn {
+@keyframes fadeInSlideUp {
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -274,6 +271,201 @@ a:hover {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveBlob {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* --- Hero Section - Estilos Base (Aplicados en escritorio, emulando la estética móvil) --- */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-light);
+    overflow: hidden;
+    /* Padding que emula el espacio vertical de la versión móvil */
+    padding: 9rem 0;
+
+    /* Fondo dinámico con degradado */
+    background: linear-gradient(to bottom, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+}
+
+/* Forma abstracta animada (el "blob" de energía en el fondo) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Tamaño de la forma, más cercano a cómo se ve en móvil */
+    width: 450px;
+    height: 450px;
+    /* Degradado cian semi-transparente */
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, rgba(26, 26, 46, 0) 60%);
+    border-radius: 45% 55% 65% 35% / 55% 45% 35% 65%;
+    /* Forma orgánica */
+    filter: blur(90px);
+    /* Desenfoque para un efecto suave */
+    transform: translate(-50%, -50%);
+    /* Centrar la forma */
+    animation: moveBlob 20s linear infinite;
+    /* Animación de rotación */
+    z-index: 1;
+    /* Detrás del contenido */
+}
+
+/* Contenedor del contenido (título, párrafo, botón) */
+.hero .container {
+    position: relative;
+    z-index: 2;
+    /* Asegura que el contenido esté sobre la forma animada */
+}
+
+/* Estilos para el título "CODEX" (ahora con tamaño de móvil/tableta grande) */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 0.12rem;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+    text-shadow:
+        0 0 15px var(--color-accent),
+        0 0 30px var(--color-accent),
+        0 0 45px rgba(0, 212, 255, 0.6),
+        0 0 60px rgba(0, 212, 255, 0.4);
+
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 1rem auto 2.5rem auto;
+    max-width: 550px;
+    font-weight: 300;
+    letter-spacing: 0.04rem;
+    opacity: 0.95;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.hero .btn-primary {
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+
+@media (max-width: 992px) {
+
+    .hero-title {
+        font-size: 3.2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+        max-width: 500px;
+    }
+
+    .hero::before {
+        width: 380px;
+        height: 380px;
+        filter: blur(70px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 0;
+        min-height: 65vh;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: 0.08rem;
+        text-shadow: 0 0 12px rgba(0, 212, 255, 0.7);
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin: 0.8rem auto 2rem auto;
+        max-width: 90%;
+    }
+
+    .hero::before {
+        width: 300px;
+        height: 300px;
+        filter: blur(60px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+        min-height: 55vh;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.05rem;
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+        margin: 0.6rem auto 1.5rem auto;
+        max-width: 90%;
+    }
+
+    .hero::before {
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
     }
 }
 
@@ -1016,7 +1208,68 @@ a:hover {
     }
 
     .hero-title {
+        font-family: var(--font-heading);
+        /* Asegura la fuente Montserrat */
+        font-size: 4.8rem;
+        /* <-- Aumentado un poco más para un impacto mayor en desktop */
+        font-weight: 900;
+        /* <-- Hacemos la fuente más audaz para el brillo */
+        letter-spacing: 0.1rem;
+        /* <-- Añadimos espaciado entre letras para un look moderno */
+        line-height: 1;
+        /* Elimina espacio extra arriba/abajo */
+        margin-bottom: 1rem;
+        /* Margen debajo del título */
+
+        /* Efecto de brillo más llamativo usando tu color acento */
+        text-shadow:
+            0 0 15px var(--color-accent),
+            /* Brillo primario */
+            0 0 30px var(--color-accent),
+            /* Brillo secundario más extendido */
+            0 0 45px rgba(0, 212, 255, 0.6),
+            /* Brillo más difuso */
+            0 0 60px rgba(0, 212, 255, 0.4);
+        /* Brillo lejano, etéreo */
+
+        /* Opcional: Si quieres un efecto 3D sutil para el texto base antes del brillo */
+        /* transform: perspective(1px) translateZ(0); */
+        /* -webkit-backface-visibility: hidden; */
+        /* backface-visibility: hidden; */
         font-size: 2.8rem;
+    }
+
+    /* --- Media Queries para responsividad (ajustes específicos del hero) --- */
+    @media (max-width: 768px) {
+        /* ... (Mantén los estilos de .hero y sus pseudo-elementos como los definimos antes) ... */
+
+        .hero-title {
+            font-size: 3.5rem;
+            /* <-- Ajustado para tabletas/móviles grandes */
+            letter-spacing: 0.08rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            /* <-- Ajustado para tabletas/móviles grandes */
+            margin: 0.8rem auto 2rem auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* ... (Mantén los estilos de .hero y sus pseudo-elementos como los definimos antes) ... */
+
+        .hero-title {
+            font-size: 2.8rem;
+            /* <-- Ajustado para móviles pequeños */
+            letter-spacing: 0.05rem;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            /* <-- Ajustado para móviles pequeños */
+            margin: 0.6rem auto 1.5rem auto;
+        }
     }
 
     .hero-subtitle {
@@ -1143,5 +1396,51 @@ a:hover {
 
     .contact-form {
         padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Botón de WhatsApp Flotante --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 1000;
+    background-color: #25D366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.2);
+    background-color: #1DA851;
+}
+
+/* Adaptación para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+        bottom: 15px;
+        left: 15px;
     }
 }
