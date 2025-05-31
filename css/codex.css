@@ -467,8 +467,18 @@ a:hover {
 
 .accordion-item {
     border-bottom: 1px solid #eee;
-    margin-bottom: 10px;
-    /* Añade un espacio extra debajo de cada ítem */
+    margin-bottom: 1px;
+    /* Por ejemplo, reduce a 5px */
+    /* o para eliminarlo completamente: */
+    /* margin-bottom: 0; */
+}
+
+@media (max-width: 480px) {
+    .accordion-item {
+        border-bottom: 1px solid #eee;
+        margin-bottom: -30px;
+    }
+
 }
 
 .accordion-item:last-child {
@@ -514,28 +524,37 @@ a:hover {
 
 .accordion-content {
     max-height: 0;
-    /* Oculta el contenido y no ocupa espacio */
     overflow: hidden;
-    /* Corta cualquier contenido que se desborde */
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    /* Para la animación */
-    padding: 0 1.5rem;
-    /* Padding horizontal, pero 0 vertical */
+    /* Mantenemos la transición de padding */
+    padding: 0;
+    /* <--- CAMBIO AQUÍ: Establecer padding inicial a 0 */
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    /* Añade transiciones para opacidad y visibilidad, con un retraso para visibility al cerrar */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out, visibility 0s 0.3s;
+    padding: 0;
+    /* Aseguramos que el padding vertical sea 0 cuando está cerrado */
+    opacity: 0;
+    /* Oculta el contenido */
+    visibility: hidden;
+    /* Asegura que no sea interactivo ni visible */
 }
 
 .accordion-content.open {
     /* max-height se define con JS */
     padding: 1.5rem 2rem;
     /* El padding vertical se aplica cuando está abierto */
+    opacity: 1;
+    /* Hace el contenido visible */
+    visibility: visible;
+    /* Hace el contenido interactivo */
+    /* La visibilidad es inmediata al abrir (0s de retraso) */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.3s ease-out, visibility 0s 0s;
 }
-
-.accordion-content p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 0;
-    /* Eliminar margen inferior del último párrafo */
-}
-
 
 /* --- Contact Section --- */
 .contact {
@@ -762,7 +781,7 @@ a:hover {
         background-color: var(--color-primary-dark);
         width: 100%;
         position: absolute;
-        top: 70px;
+        top: 85px;
         left: 0;
         padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -804,9 +823,195 @@ a:hover {
         display: block;
     }
 
+
+    /* --- Keyframes para la animación de la forma --- */
+    @keyframes moveBlob {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+        position: relative;
+        /* Necesario para el posicionamiento absoluto de la forma */
+        height: 100vh;
+        /* Ocupa toda la altura de la pantalla */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--color-text-light);
+        /* Texto blanco */
+        overflow: hidden;
+        /* Oculta cualquier cosa que se salga del contenedor */
+        padding: var(--padding-section);
+        /* Espaciado interno */
+
+        /* Degradado de fondo sutil */
+        background: linear-gradient(to bottom, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+    }
+
+    /* Forma abstracta animada */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        /* Tamaño de la forma */
+        height: 500px;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(26, 26, 46, 0) 60%);
+        /* Degradado radial con transparencia */
+        border-radius: 45% 55% 65% 35% / 55% 45% 35% 65%;
+        /* Forma irregular */
+        filter: blur(80px);
+        /* Desenfoque para un efecto suave */
+        transform: translate(-50%, -50%);
+        /* Centrar la forma */
+        animation: moveBlob 20s linear infinite;
+        /* Animación de rotación */
+        z-index: 1;
+        /* Detrás del texto */
+    }
+
+    /* Estilos para el contenido (título, párrafo, botón) */
+    .hero .container {
+        position: relative;
+        z-index: 2;
+        /* Asegura que el contenido esté sobre la forma */
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        /* Sombra para mejor legibilidad */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin: 1rem auto 2rem;
+        max-width: 600px;
+    }
+
+    /* Media Queries para responsividad */
+    @media (max-width: 768px) {
+        .hero {
+            height: auto;
+            min-height: 50vh;
+            /* Altura mínima en móviles */
+            padding: 3rem 0;
+        }
+
+        .hero::before {
+            width: 300px;
+            /* Forma más pequeña en móviles */
+            height: 300px;
+            filter: blur(60px);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+    }
+
+    /* Asegurar que el contenido del hero esté por encima de las ondas */
+    .hero .container {
+        position: relative;
+        z-index: 2;
+        /* Mayor que los pseudo-elementos */
+    }
+
+    .hero-title {
+        font-family: var(--font-heading);
+        font-size: 6rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+        /* Añadimos una sutil sombra de texto para que resalte más sobre el fondo dinámico */
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.6);
+        /* Más llamativo */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.6;
+    }
+
+    /* Media Queries para Responsividad (ajustes de las formas en diferentes tamaños de pantalla) */
+    @media (max-width: 768px) {
+        .hero {
+            height: auto;
+            /* Ocupa la altura del contenido en móvil */
+            min-height: 70vh;
+            /* Asegura una altura mínima para el fondo */
+            padding: 4rem 0;
+            /* Ajusta el padding para móvil */
+        }
+
+        .hero::before {
+            width: 400px;
+            height: 400px;
+            filter: blur(80px);
+        }
+
+        .hero::after {
+            width: 300px;
+            height: 300px;
+            filter: blur(60px);
+            bottom: -50px;
+            right: -50px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero::before {
+            width: 300px;
+            height: 300px;
+            filter: blur(60px);
+        }
+
+        .hero::after {
+            width: 200px;
+            height: 200px;
+            filter: blur(40px);
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+        }
+    }
+
+
     /* General */
     .hero {
-        padding: 6rem 1rem;
+        padding: 10rem 1rem;
         min-height: 60vh;
     }
 
