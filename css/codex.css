@@ -190,75 +190,100 @@ a:hover {
 }
 
 
-/* Modifica esta sección en tu codex.css, reemplazando la regla .btn-primary */
-
+/* --- Botones --- */
 .btn-primary {
     display: inline-block;
     padding: 1rem 2.5rem;
-    /* Padding un poco más generoso */
+    /* Padding generoso */
     background-color: var(--color-accent);
     /* Tu color cian brillante */
     color: var(--color-primary-dark);
-    /* Color del texto del botón */
     border: none;
     border-radius: var(--border-radius-primary);
-    font-size: 1.1rem;
-    /* Un poco más grande para destacar */
+    font-size: 1.15rem;
     font-weight: 700;
-    /* Más audaz */
     text-decoration: none;
     cursor: pointer;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
     position: relative;
+    /* Mantener por si acaso, aunque no es estrictamente necesario para la escala simple */
     z-index: 1;
-    overflow: hidden;
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.4),
-        0 4px 6px rgba(0, 0, 0, 0.2),
-        0 0 10px rgba(0, 212, 255, 0.3);
 
-    transform: translateY(0);
+    /* Sombra base sutil para darle algo de relieve */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* Transición enfocada SÓLO en la transformación y la sombra */
+    /* Usamos 'all' para transicionar cualquier propiedad que cambie en :hover */
+    transition: all var(--transition-speed) ease-out;
+
+    /* NO NECESITAMOS ::before ni ::after para este efecto */
+    /* Si existían en tu archivo, asegúrate de que sean eliminados de esta regla */
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius-primary);
-    background: linear-gradient(to bottom, #00A3CC, #007C9E);
-    z-index: -1;
-    transform: translateY(6px);
-    transition: transform var(--transition-speed), background var(--transition-speed);
-    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
+/* Eliminar el pseudo-elemento ::after si lo tenías configurado antes para el brillo */
+/* Asegúrate de que no haya ninguna regla .btn-primary::after { ... } en tu CSS para este botón. */
 
+
+/* Contenido del botón (texto) - Asegúrate de que no tenga z-index específicos aquí si no son necesarios */
+/* Para este efecto simple de expansión, el <span> ya no necesita estilos de z-index o position. */
+/* Puedes simplemente dejar el <span> en tu HTML y no necesitar esta regla CSS */
+/* .btn-primary span { ... }  <-- ¡Puedes eliminar esta regla CSS por completo! */
+
+
+/* Efecto al pasar el mouse (hover) - ¡Aquí está la expansión! */
 .btn-primary:hover {
-    transform: translateY(2px);
+    transform: scale(1.05);
+    /* Se expande un 5% */
     background-color: #00BFFF;
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.4),
-        0 2px 4px rgba(0, 0, 0, 0.2),
-        0 0 5px rgba(0, 212, 255, 0.2);
+    /* Ligero cambio de color al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra un poco más pronunciada al expandirse */
 }
 
-.btn-primary:hover::before {
-    transform: translateY(0);
-    background: linear-gradient(to bottom, #00BFFF, #0099CC);
-}
-
+/* Efecto al hacer click (active) - Ligeramente más presionado */
 .btn-primary:active {
-    transform: translateY(4px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+    transform: scale(0.98);
+    /* Se contrae un poco al hacer click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary:active::before {
-    transform: translateY(-2px);
-    background: linear-gradient(to bottom, #0099CC, #006699);
+
+/* ---Seccion de prototipos --- */
+
+.prototypes-content {
+    max-width: var(--max-width-container);
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.prototypes-content h1 {
+    font-family: var(--font-heading);
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.prototypes-content p {
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.back-button {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
+    border-radius: var(--border-radius-primary);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0F5480;
+    /* Un poco más oscuro al hover */
+}
 
 /* --- Hero Section --- */
 
@@ -1443,4 +1468,359 @@ a:hover {
         bottom: 15px;
         left: 15px;
     }
+}
+
+/* --- Sección de Prototipos con Carrusel --- */
+.section#prototipos {
+    padding: var(--padding-section);
+    background-color: var(--color-light-gray);
+    overflow: hidden;
+    /* Importante para que los elementos del carrusel no se salgan */
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    /* Oculta las tarjetas que están fuera de vista */
+    padding: 0 70px;
+    /* <--- AUMENTADO AQUÍ para dar más espacio a las flechas */
+}
+
+.carousel-track {
+    display: flex;
+    /* Mantiene las tarjetas en una fila */
+    transition: transform 0.6s ease-in-out;
+    /* Transición suave para el deslizamiento */
+    /* Asegura que no haya espacio extra que cause problemas de scroll */
+    margin-left: -10px;
+    /* Compensa el padding de 10px que tendrá cada card */
+    margin-right: -10px;
+    /* Compensa el padding de 10px que tendrá cada card */
+}
+
+.prototype-card {
+    flex: 0 0 auto;
+    /* No crece, no se encoge, tamaño automático */
+    width: 320px;
+    /* Ancho fijo para cada tarjeta en el carrusel */
+    margin: 0 10px;
+    /* Espacio entre tarjetas */
+    background-color: white;
+    border-radius: var(--border-radius-primary);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Para que la imagen no se salga del borde redondeado */
+}
+
+.prototype-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.prototype-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.prototype-info {
+    padding: 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prototype-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.8rem;
+}
+
+.prototype-info p {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.prototype-info .btn {
+    margin-top: auto;
+    width: auto;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(26, 26, 46, 0.7);
+    /* var(--color-primary-dark) con opacidad */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    /* Asegura que estén por encima de las tarjetas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: var(--color-accent);
+    /* Tu cian brillante al hover */
+    transform: translateY(-50%) scale(1.1);
+    /* Efecto de escala al hover */
+}
+
+.carousel-button.prev {
+    left: 0px;
+    /* Ajusta la posición izquierda */
+}
+
+.carousel-button.next {
+    right: 0px;
+    /* Ajusta la posición derecha */
+}
+
+/* --- Adaptabilidad (Responsive) del Carrusel --- */
+@media (max-width: 992px) {
+    .prototype-card {
+        width: 280px;
+        /* Ancho de tarjeta un poco más pequeño en tablets */
+    }
+
+    .prototype-img {
+        height: 180px;
+    }
+
+    .prototype-info h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        overflow: hidden;
+        /* Oculta las tarjetas que están fuera de vista */
+        padding: 0 70px;
+        /* <--- AUMENTADO AQUÍ para dar más espacio a las flechas */
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        opacity: 0.8;
+        /* Ligeramente menos prominentes en móvil */
+    }
+
+    .carousel-button.prev {
+        left: 0px;
+    }
+
+    .carousel-button.next {
+        right: 0px;
+    }
+
+    /* Para mostrar solo una tarjeta por vez en móviles */
+    .carousel-track {
+        justify-content: flex-start;
+        /* Alinea al inicio */
+    }
+
+    .prototype-card {
+        width: 90%;
+        /* Ocupa casi todo el ancho disponible */
+        margin: 0 5%;
+        /* Centra la tarjeta */
+        flex-shrink: 0;
+        /* Asegura que no se encoja */
+    }
+
+    .prototype-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .prototype-card {
+        width: 95%;
+        /* Ajuste para pantallas muy pequeñas */
+        margin: 0 2.5%;
+    }
+
+    .prototype-img {
+        height: 180px;
+    }
+
+    .prototype-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .prototype-info p {
+        font-size: 0.9rem;
+    }
+
+    .prototype-info .btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+.whatsapp-cta-section {
+    background-color: var(--color-primary-dark);
+    padding: 5rem 0;
+    /* Usa Flexbox para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    /* Apila los elementos verticalmente */
+    align-items: center;
+    /* Centra horizontalmente los elementos hijos */
+    justify-content: center;
+    /* Centra verticalmente (útil si la sección tiene una altura mínima) */
+    text-align: center;
+    /* Mantener por si acaso hay elementos de texto antiguos que no sean hijos directos de flex */
+}
+
+/* Asegúrate de que el .container dentro de esta sección no impida el centrado */
+.whatsapp-cta-section .container {
+    /* Asegúrate de que el ancho máximo del contenedor sea manejable y centrado */
+    max-width: var(--max-width-container);
+    /* Usar la variable global */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho disponible */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    /* Añade un padding horizontal para evitar que el contenido toque los bordes */
+}
+
+
+.whatsapp-cta-section .section-title,
+.whatsapp-cta-section .section-subtitle {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    /* Estos ya deberían estar centrados por el text-align: center del padre o por flexbox */
+    /* Aseguramos que sus propios márgenes auto también contribuyan al centrado si tienen max-width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whatsapp-cta-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.whatsapp-cta-section .section-subtitle {
+    font-size: 1.15rem;
+    max-width: 800px;
+    /* Limita el ancho del subtítulo para mejor legibilidad */
+    margin-left: auto;
+    /* Centrar el subtítulo */
+    margin-right: auto;
+}
+
+/* Estilo para el botón de WhatsApp específico (más grande) */
+.whatsapp-btn-large {
+    /* display: inline-flex ya lo hace comportarse como un elemento de línea,
+       pero al estar dentro de un contenedor flex con align-items: center,
+       también se centrará */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    background-color: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* No necesitas margin-left/right: auto aquí si el padre es flexbox con align-items: center */
+}
+
+.whatsapp-btn-large:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-btn-large:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .whatsapp-cta-section {
+        padding: 4rem 0;
+    }
+
+    .whatsapp-cta-section .section-title {
+        font-size: 2rem;
+    }
+
+    .whatsapp-cta-section .section-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        /* Añade un poco de padding horizontal en móviles para el texto */
+    }
+
+    .whatsapp-btn-large {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        width: 90%;
+        /* Ocupa más ancho en pantallas pequeñas */
+        max-width: 320px;
+        /* Ancho máximo para el botón */
+    }
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-primary-dark);
+    text-align: center;
+    /* Asegura que el título esté centrado */
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+    text-align: center;
+    /* ¡AQUÍ ESTÁ LA CLAVE PARA CENTRAR EL SUBTÍTULO! */
+    margin-bottom: 2.5rem;
+    /* Espacio debajo del subtítulo */
+    max-width: 700px;
+    /* Limita el ancho para mejor legibilidad en pantallas grandes */
+    margin-left: auto;
+    /* Centrar el bloque del subtítulo si tiene max-width */
+    margin-right: auto;
+    line-height: 1.6;
 }
