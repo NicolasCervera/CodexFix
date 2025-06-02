@@ -194,58 +194,22 @@ a:hover {
 .btn-primary {
     display: inline-block;
     padding: 1rem 2.5rem;
-    /* Padding generoso */
-    background-color: var(--color-accent);
-    /* Tu color cian brillante */
-    color: var(--color-primary-dark);
-    border: none;
-    border-radius: var(--border-radius-primary);
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    text-decoration: none;
+    border: none;
+    border-radius: 16px;
+    background-color: #00D4FF;
+    color: #1A1A2E;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
     cursor: pointer;
-    position: relative;
-    /* Mantener por si acaso, aunque no es estrictamente necesario para la escala simple */
-    z-index: 1;
-
-    /* Sombra base sutil para darle algo de relieve */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-    /* Transición enfocada SÓLO en la transformación y la sombra */
-    /* Usamos 'all' para transicionar cualquier propiedad que cambie en :hover */
-    transition: all var(--transition-speed) ease-out;
-
-    /* NO NECESITAMOS ::before ni ::after para este efecto */
-    /* Si existían en tu archivo, asegúrate de que sean eliminados de esta regla */
 }
 
-/* Eliminar el pseudo-elemento ::after si lo tenías configurado antes para el brillo */
-/* Asegúrate de que no haya ninguna regla .btn-primary::after { ... } en tu CSS para este botón. */
-
-
-/* Contenido del botón (texto) - Asegúrate de que no tenga z-index específicos aquí si no son necesarios */
-/* Para este efecto simple de expansión, el <span> ya no necesita estilos de z-index o position. */
-/* Puedes simplemente dejar el <span> en tu HTML y no necesitar esta regla CSS */
-/* .btn-primary span { ... }  <-- ¡Puedes eliminar esta regla CSS por completo! */
-
-
-/* Efecto al pasar el mouse (hover) - ¡Aquí está la expansión! */
 .btn-primary:hover {
-    transform: scale(1.05);
-    /* Se expande un 5% */
-    background-color: #00BFFF;
-    /* Ligero cambio de color al pasar el mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Sombra un poco más pronunciada al expandirse */
+    transform: translateY(-10px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
 }
-
-/* Efecto al hacer click (active) - Ligeramente más presionado */
-.btn-primary:active {
-    transform: scale(0.98);
-    /* Se contrae un poco al hacer click */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-
 
 /* ---Seccion de prototipos --- */
 
@@ -891,7 +855,6 @@ a:hover {
     color: var(--color-accent);
     font-family: var(--font-heading);
     flex-basis: 100%;
-    /* Ocupa todo el ancho en móvil */
     margin-bottom: 1rem;
 }
 
@@ -906,12 +869,16 @@ a:hover {
     list-style: none;
     display: flex;
     justify-content: center;
-    /* Centrar en desktop */
     gap: 1.5rem;
     flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
+
 .footer-links li a {
+    font-size: large;
     color: var(--color-light-gray);
     font-weight: 400;
     transition: color var(--transition-speed);
@@ -1823,4 +1790,28 @@ a:hover {
     /* Centrar el bloque del subtítulo si tiene max-width */
     margin-right: auto;
     line-height: 1.6;
+}
+
+#nosotrosNos {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: white;
+    /* por si la imagen tiene fondo transparente */
+}
+
+#nosotrosNos:hover {
+    transform: translateY(-10px);
+    /* levanta la imagen como si flotara */
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
 }
